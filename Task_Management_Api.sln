@@ -17,6 +17,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskManagement.Persistence"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskManagement.WebApi", "TaskManagement.WebApi\TaskManagement.WebApi.csproj", "{A1093619-064A-4E7D-98F9-929E7B1B2FDC}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Postman", "Postman", "{ED8DC32B-0DDD-4D91-99C3-1356CD9A3E0F}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\..\Downloads\TaskManagement.postman_collection.json = ..\..\..\Downloads\TaskManagement.postman_collection.json
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
