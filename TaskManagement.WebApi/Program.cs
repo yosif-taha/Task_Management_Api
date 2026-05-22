@@ -1,5 +1,6 @@
 ﻿using TaskManagement.Application;
 using TaskManagement.Persistence;
+using TaskManagement.WebApi.Middleware;
 
 
 namespace TaskManagement.WebApi
@@ -23,7 +24,7 @@ namespace TaskManagement.WebApi
 
 
             var app = builder.Build();
-
+            app.UseMiddleware<ExceptionHandlingMiddleware>();
             if (app.Environment.IsDevelopment())
             {
                 app.UseSwagger();
