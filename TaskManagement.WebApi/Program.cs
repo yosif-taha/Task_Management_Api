@@ -1,4 +1,5 @@
-﻿using TaskManagement.Application;
+﻿using Microsoft.EntityFrameworkCore;
+using TaskManagement.Application;
 using TaskManagement.Persistence;
 using TaskManagement.WebApi.Middleware;
 
@@ -38,6 +39,24 @@ namespace TaskManagement.WebApi
 
             app.MapControllers();
 
+            using (var scope = app.Services.CreateScope())
+            {
+                var services = scope.ServiceProvider;
+                try
+                {
+                    var context = services.GetServices<Microsoft.EntityFrameworkCore.DbContext>().FirstOrDefault();
+
+                    if (context != null && context.Database.GetPendingMigrations().Any())
+                    {
+                        context.Database.Migrate();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    var logger = services.GetRequiredService<ILogger<Program>>();
+                    logger.LogError(ex, "An error occurred while migrating the database.");
+                }
+            }
             app.Run();
         }
     }
