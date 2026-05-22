@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
+using System.Reflection;
 
 namespace TaskManagement.Application
 {
@@ -9,6 +10,7 @@ namespace TaskManagement.Application
         
             services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(typeof(DependencyInjection).Assembly));
 
+            services.AddAutoMapper(Assembly.GetExecutingAssembly());
             return services;
         }
     }

@@ -1,5 +1,5 @@
 ﻿using MediatR;
-using TaskManagement.Application.Dtos;
+using TaskManagement.Application.Common.Dtos.Auth;
 
 namespace TaskManagement.Application.Features.Auth.Commands.Login
 {
