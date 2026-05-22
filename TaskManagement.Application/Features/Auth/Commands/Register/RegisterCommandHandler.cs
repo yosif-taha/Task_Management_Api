@@ -1,6 +1,6 @@
 ﻿using MediatR;
 using Microsoft.EntityFrameworkCore;
-using TaskManagement.Application.Dtos;
+using TaskManagement.Application.Common.Dtos.Auth;
 using TaskManagement.Application.Interfaces;
 using TaskManagement.Domin.Models;
 

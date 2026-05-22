@@ -1,6 +1,6 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using TaskManagement.Application.Dtos;
+using TaskManagement.Application.Common.Dtos.Auth;
 using TaskManagement.Application.Features.Auth.Commands.Login;
 using TaskManagement.Application.Features.Auth.Commands.Register;
 

@@ -22,6 +22,7 @@ namespace TaskManagement.Persistence
 
             services.AddScoped<IAppDbContext>(provider => provider.GetRequiredService<AppDbContext>());
 
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddScoped<IJwtTokenGenerator, JwtTokenGenerator>();
 
             var secretKey = configuration["JwtSettings:Secret"]!;
