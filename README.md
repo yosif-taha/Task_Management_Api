@@ -19,34 +19,25 @@ The solution is structured using **Clean Architecture** to ensure separation of 
 
 * **Framework:** .NET 9 (ASP.NET Core Web API)
 * **Database & ORM:** SQL Server & Entity Framework Core
-* **Design Patterns:** CQRS (Command Query Responsibility Segregation) via **MediatR**
-* **Object Mapping:** **AutoMapper** with optimized `ProjectTo` database-level projections
-* **Validation:** **FluentValidation** integrated seamlessly into MediatR Pipelines
-* **Security:** **JWT Authentication** (Token-based authorization per user)
-* **Error Handling:** **Global Exception Handling Middleware**
-* **API Response:** Implemented a **Generic Response Wrapper** (`ApiResponse<T>`) for consistent API designs
+* **Design Patterns:** CQRS (Command Query Responsibility Segregation) via **MediatR**[cite: 1]
+* **Object Mapping:** **AutoMapper** with optimized `ProjectTo` database-level projections[cite: 1]
+* **Validation:** **FluentValidation** integrated seamlessly into MediatR Pipelines[cite: 1]
+* **Security:** **JWT Authentication** (Token-based authorization per user)[cite: 1]
+* **Error Handling:** **Global Exception Handling Middleware**[cite: 1]
+* **API Response:** Implemented a **Generic Response Wrapper** (`ApiResponse<T>`) for consistent API designs[cite: 1]
 
 ---
 
 ## ⚙️ Setup & Installation Instructions
 
 ### Prerequisites
-* **.NET 9 SDK** installed.
-* **SQL Server** (LocalDB or Express) running.
+* **.NET 9 SDK** installed[cite: 1].
+* **SQL Server** (LocalDB or Express) running[cite: 1].
 
 ### Configuration
-1. Open the `appsettings.json` file inside the `Presentation` project.
-2. Update the `ConnectionStrings:DefaultConnection` to match your SQL Server instance:
+1. Open the `appsettings.json` file inside the `Presentation` project[cite: 1].
+2. Update the `ConnectionStrings:DefaultConnection` to match your SQL Server instance[cite: 1]:
 ```json
    "ConnectionStrings": {
-     "DefaultConnection": "Server=YOUR_SERVER;Database=TaskManagementDb;Trusted_Connection=True;TrustServerCertificate=True;"
+     "DefaultConnection": "Server=.;Database=TaskManagementDb;Trusted_Connection=True;TrustServerCertificate=True;"
    }
-
----
-
-## 👨‍💻 Author
-
-**Youssef Taha**  
-- 📧 Email: yousif.t.abdulwahab@gmail.com 
-- 🔗 [LinkedIn](https://www.linkedin.com/in/yousif-taha-89454922b/)  
-- 🔗 [GitHub](https://github.com/yosif-taha)  
