@@ -1,11 +1,12 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using System.Diagnostics;
+using TaskManagement.Application.Interfaces;
 using TaskManagement.Domin.Models;
 
 namespace TaskManagement.Persistence.Data.Contexts
 {
-    public class AppDbContext : DbContext
+    public class AppDbContext : DbContext, IAppDbContext
     {
         public AppDbContext(DbContextOptions<AppDbContext> options) 
            : base(options)
@@ -13,6 +14,7 @@ namespace TaskManagement.Persistence.Data.Contexts
         }
         public DbSet<Project> Projects { get; set; }
         public DbSet<ProjectTask> Tasks { get; set; }
+        public DbSet<User> Users { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
